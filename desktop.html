@@ -136,14 +136,35 @@
 </head>
 <body>
     <header class="header">
-        <h1>Cooking by Syeda</h1>
-        <div class="nav-links">
-            <a href="#recipes">Recipes</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#tips">Cooking Tips</a>
-            <a href="#community">Community</a>
+    <h1>Cooking by Syeda</h1>
+    <div class="nav-links">
+        <a href="#recipes">Recipes</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#tips">Cooking Tips</a>
+        <a href="#community">Community</a>
+    </div>
+    <div style="margin-top: 10px;">
+        <input type="text" id="searchBar" placeholder="Search Recipes..." onfocus="showRecipeList()" onblur="hideRecipeList()" />
+        <div id="recipeList" style="display: none; position: absolute; background: white; border: 1px solid #ccc; z-index: 1000;">
+            <a href="#dal-tadka" onclick="hideRecipeList()">Dal Tadka</a>
+            <a href="#hyderabadi-biryani" onclick="hideRecipeList()">Hyderabadi Biryani</a>
+            <a href="#shaami-kebab" onclick="hideRecipeList()">Shaami Kebab</a>
+            <a href="#marag" onclick="hideRecipeList()">Marag</a>
+            <a href="#dalcha" onclick="hideRecipeList()">Dalcha</a>
+            <!-- Add more recipes as needed -->
         </div>
-    </header>
+    </div>
+</header>
+
+<script>
+    function showRecipeList() {
+        document.getElementById('recipeList').style.display = 'block';
+    }
+
+    function hideRecipeList() {
+        document.getElementById('recipeList').style.display = 'none';
+    }
+</script>
     <div class="container">
         <img src="logo.png" alt="Profile Picture" class="profile-pic">
         <p class="bio">🍲 Easy & Healthy Hyderabadi Recipes 🌱 Step-by-Step Videos 💰 Affordable & Delicious 👩‍🍳 Join Our Culinary Journey!</p>

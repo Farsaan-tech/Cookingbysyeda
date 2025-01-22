@@ -133,7 +133,7 @@
     </style>
 </head>
 <body>
-   <header class="header">
+  <header class="header">
     <h1>Cooking by Syeda</h1>
     <div class="nav-links">
         <a href="#recipes">Recipes</a>
@@ -141,26 +141,43 @@
         <a href="#tips">Cooking Tips</a>
         <a href="#community">Community</a>
     </div>
-    <div style="margin-top: 10px;">
-        <input type="text" id="searchBar" placeholder="Search Recipes..." onfocus="showRecipeList()" onblur="hideRecipeList()" />
-        <div id="recipeList" style="display: none; position: absolute; background: white; border: 1px solid #ccc; z-index: 1000;">
-            <a href="#dal-tadka" onclick="hideRecipeList()">Dal Tadka</a>
-            <a href="#hyderabadi-biryani" onclick="hideRecipeList()">Hyderabadi Biryani</a>
-            <a href="#shaami-kebab" onclick="hideRecipeList()">Shaami Kebab</a>
-            <a href="#marag" onclick="hideRecipeList()">Marag</a>
-            <a href="#dalcha" onclick="hideRecipeList()">Dalcha</a>
+    <div style="margin-top: 10px; position: relative;">
+        <button onclick="toggleDropdown()">Search Recipes</button>
+        <div id="imageDropdown" style="display: none; position: absolute; background: white; border: 1px solid #ccc; z-index: 1000; padding: 10px;">
+            <a href="#dal-tadka" onclick="toggleDropdown()">
+                <img src="dal.jpg" alt="Dal Tadka" style="width: 100px; height: auto; margin: 5px;" />
+            </a>
+            <a href="#hyderabadi-biryani" onclick="toggleDropdown()">
+                <img src="hyderabadi-biryani.jpg" alt="Hyderabadi Biryani" style="width: 100px; height: auto; margin: 5px;" />
+            </a>
+            <a href="#shaami-kebab" onclick="toggleDropdown()">
+                <img src="shaami.jpg" alt="Shaami Kebab" style="width: 100px; height: auto; margin: 5px;" />
+            </a>
+            <a href="#marag" onclick="toggleDropdown()">
+                <img src="marag.jpg" alt="Marag" style="width: 100px; height: auto; margin: 5px;" />
+            </a>
+            <a href="#dalcha" onclick="toggleDropdown()">
+                <img src="dalcha.jpg" alt="Dalcha" style="width: 100px; height: auto; margin: 5px;" />
+            </a>
             <!-- Add more recipes as needed -->
         </div>
     </div>
 </header>
 
 <script>
-    function showRecipeList() {
-        document.getElementById('recipeList').style.display = 'block';
+    function toggleDropdown() {
+        const dropdown = document.getElementById('imageDropdown');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
     }
 
-    function hideRecipeList() {
-        document.getElementById('recipeList').style.display = 'none';
+    // Close the dropdown if clicked outside
+    window.onclick = function(event) {
+        if (!event.target.matches('button')) {
+            const dropdown = document.getElementById('imageDropdown');
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            }
+        }
     }
 </script>
     <div class="container">

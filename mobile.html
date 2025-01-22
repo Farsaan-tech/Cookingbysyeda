@@ -21,25 +21,56 @@
         .dropdown {
             position: relative;
             display: inline-block;
-            margin-top: 10px;
         }
+
+        .dropdown button {
+            padding: 10px 15px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .dropdown button:hover {
+            background-color: #e5533d;
+        }
+
         .dropdown-content {
             display: none;
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            border: 1px solid #ccc;
-            z-index: 1000;
+            background-color: white;
+            min-width: 300px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             padding: 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            transform: translateX(-50%) translateY(-10px);
+            z-index: 1;
+            border-radius: 5px;
         }
-        .dropdown-content.show {
-            display: block;
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
+
+        .dropdown-content a {
+            display: inline-block;
+            margin: 5px;
+            text-decoration: none;
+        }
+
+        .dropdown-content img {
+            width: 100px; /* Set the image width */
+            height: 100px; /* Set the image height */
+            border-radius: 8px;
+            object-fit: cover;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .dropdown-content img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: flex;
+            flex-wrap: wrap; /* Allows images to wrap to the next row if necessary */
+            justify-content: center;
         }
         .recipe-image {
             width: 150px; /* Set a fixed width for images */

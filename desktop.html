@@ -145,36 +145,70 @@
     </div>
     <div style="margin-top: 10px; position: relative;">
         <button onclick="toggleDropdown()">Search Recipes</button>
-        <div id="imageDropdown" style="display: none; position: absolute; background: white; border: 1px solid #ccc; z-index: 1000; padding: 10px;">
-            <a href="#dal-tadka" onclick="toggleDropdown()">
-                <img src="dal.jpg" alt="Dal Tadka" style="width: 100px; height: auto; margin: 5px;" />
-            </a>
-            <a href="#shaami-kebab" onclick="toggleDropdown()">
-                <img src="shaami.jpg" alt="Shaami Kebab" style="width: 100px; height: auto; margin: 5px;" />
-            </a>
-            <a href="#marag" onclick="toggleDropdown()">
-                <img src="marag.jpg" alt="Marag" style="width: 100px; height: auto; margin: 5px;" />
-            </a>
-            <a href="#dalcha" onclick="toggleDropdown()">
-                <img src="dalcha.jpg" alt="Dalcha" style="width: 100px; height: auto; margin: 5px;" />
-            </a>
-            <!-- Add more recipes as needed -->
-        </div>
+        <div class="dropdown">
+    <button onclick="toggleDropdown()">Search Recipes</button>
+    <div id="imageDropdown" class="dropdown-content">
+        <a href="#dal-tadka" onclick="toggleDropdown()">
+            <img src="dal.jpg" alt="Dal Tadka" class="recipe-image" />
+        </a>
+        <a href="#hyderabadi-biryani" onclick="toggleDropdown()">
+            <img src="hyderabadi-biryani.jpg" alt="Hyderabadi Biryani" class="recipe-image" />
+        </a>
+        <a href="#shaami-kebab" onclick="toggleDropdown()">
+            <img src="shaami.jpg" alt="Shaami Kebab" class="recipe-image" />
+        </a>
+        <a href="#marag" onclick="toggleDropdown()">
+            <img src="marag.jpg" alt="Marag" class="recipe-image" />
+        </a>
+        <a href="#dalcha" onclick="toggleDropdown()">
+            <img src="dalcha.jpg" alt="Dalcha" class="recipe-image" />
+        </a>
     </div>
-</header>
+</div>
+
+<style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-top: 10px;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        border: 1px solid #ccc;
+        z-index: 1000;
+        padding: 10px;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    .dropdown-content.show {
+        display: block;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    .recipe-image {
+        width: 100px;
+        height: auto;
+        margin: 5px;
+    }
+</style>
 
 <script>
     function toggleDropdown() {
         const dropdown = document.getElementById('imageDropdown');
-        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        dropdown.classList.toggle('show');
     }
 
     // Close the dropdown if clicked outside
     window.onclick = function(event) {
-        if (!event.target.matches('button')) {
+        if (!event.target.matches('.dropdown button')) {
             const dropdown = document.getElementById('imageDropdown');
-            if (dropdown.style.display === 'block') {
-                dropdown.style.display = 'none';
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
             }
         }
     }

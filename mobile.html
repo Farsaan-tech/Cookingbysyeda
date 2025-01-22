@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking by Syeda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0; /* Simple grey background */
+        }
+        .header {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(144, 238, 144, 0.9));
+            color: #333;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .nav-links {
+            margin-top: 5px;
+        }
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .container {
+            padding: 20px; /* Reduced padding for mobile */
+            max-width: 1200px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 100px;
+        }
+        .profile-pic {
+            width: 120px; /* Adjusted for mobile */
+            border-radius: 50%;
+        }
+        .bio {
+            font-size: 18px; /* Adjusted for mobile */
+            color: #333;
+            margin: 10px 0;
+        }
+        h2 {
+            color: #ff6347;
+            margin-top: 20px; /* Adjusted for mobile */
+            font-size: 22px; /* Adjusted for mobile */
+            position: relative;
+        }
+        .recipe {
+            display: flex;
+            flex-direction: column; /* Stack images and text vertically for mobile */
+            background: #e2e2e2;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .recipe img {
+            width: 100%; /* Full width for mobile */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px;
+            margin-bottom: 10px; /* Spacing between image and text */
+            transition: transform 0.3s;
+        }
+        .recipe:hover img {
+            transform: scale(1.05);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            margin: 10px;
+            width: 150px; /* Compact size */
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%; /* Maintain square aspect ratio */
+            object-fit: cover; /* Ensure cover fits the square without distortion */
+            border-radius: 10px;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 99, 71, 0.8);
+            color: #fff;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            margin-top: 20px;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+        .footer img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        .instructions, .coming-soon {
+            margin-top: 10px;
+            font-size: 14px; /* Adjusted for mobile */
+            color: #ff6347; /* Highlighted for visibility */
+        }
+        .coming-soon {
+            font-weight: bold;
+            text-align: center; /* Center alignment for visibility */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Cooking by Syeda</h1>
+        <div class="nav-links">
+            <a href="#recipes">Recipes</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#tips">Cooking Tips</a>
+            <a href="#community">Community</a>
+        </div>
+    </header>
+    <div class="container">
+        <img src="logo.png" alt="Profile Picture" class="profile-pic">
+        <p class="bio">🍲 Easy & Healthy Hyderabadi Recipes 🌱 Step-by-Step Videos 💰 Affordable & Delicious 👩‍🍳 Join Our Culinary Journey!</p>
+        
+        <h2 id="recipes">Featured Recipes</h2>
+        <div class="recipe">
+            <img src="dal.jpg" alt="Dal Tadka">
+            <div>
+                <h3>Dal Tadka</h3>
+                <p>A comforting and flavorful lentil dish made with spices and tempered with ghee. Perfect with rice or roti.</p>
+                <p class="ingredients">Ingredients:</p>
+                <ul class="instructions">
+                    <li>1 cup yellow lentils (toor dal)</li>
+                    <li>1 onion, chopped</li>
+                    <li>2 tomatoes, chopped</li>
+                    <li>2 green chilies, slit</li>
+                    <li>1 tsp cumin seeds</li>
+                    <li>1/2 tsp turmeric powder</li>
+                    <li>Salt to taste</li>
+                    <li>2 tbsp ghee or oil</li>
+                    <li>Fresh coriander for garnish</li>
+                </ul>
+            </div>
+        </div>
+        <div class="recipe">
+            <img src="hyderabadi-biryani.jpg" alt="Hyderabadi Biryani">
+            <div>
+                <h3>Hyderabadi Biryani</h3>
+                <p class="coming-soon">Coming Soon!</p>
+                <p>A famous fragrant rice dish made with marinated meat and rich spices, layered for an aromatic experience.</p>
+                <p class="ingredients">Ingredients:</p>
+                <ul class="instructions">
+                    <li>2 cups basmati rice</li>
+                    <li>500g chicken, cut into pieces</li>
+                    <li>1 large onion, sliced</li>
+                    <li>2 tomatoes, chopped</li>
+                    <li>1/2 cup yogurt</li>
+                    <li>2 tbsp biryani masala</li>
+                    <li>Mint and coriander leaves</li>
+                    <li>Salt to taste</li>
+                    <li>4 cups water</li>
+                </ul>
+            </div>
+        </div>
+        <div class="recipe">
+            <img src="shaami.jpg" alt="Shaami Kebab">
+            <div>
+                <h3>Shaami Kebab</h3>
+                <p>Deliciously spiced minced meat kebabs that are shallow-fried and served with mint chutney.</p>
+                <p class="ingredients">Ingredients:</p>
+                <ul class="instructions">
+                    <li>500g minced meat (beef/lamb)</li>
+                    <li>1 cup split chickpeas (chana dal)</li>
+                    <li>1 onion, chopped</li>
+                    <li>2-3 green chilies, chopped</li>
+                    <li>1 tsp ginger-garlic paste</li>
+                    <li>Spices: cumin, coriander, garam masala, and salt</li>
+                    <li>Oil for frying</li>
+                </ul>
+            </div>
+        </div>
+        <div class="recipe">
+            <img src="marag.jpg" alt="Marag">
+            <div>
+                <h3>Marag</h3>
+                <p>A flavorful Hyderabadi mutton soup made with spices and herbs, perfect for a cozy meal.</p>
+                <p class="ingredients">Ingredients:</p>
+                <ul class="instructions">
+                    <li>500g mutton, cut into pieces</li>
+                    <li>1 onion, sliced</li>
+                    <li>2 tomatoes, chopped</li>
+                    <li>1 tbsp ginger-garlic paste</li>
+                    <li>Spices: cardamom, cloves, cinnamon, and salt</li>
+                    <li>4 cups water</li>
+                    <li>Fresh coriander and mint for garnish</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 id="gallery">Our Culinary Creations</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="dalcha.jpg" alt="Dalcha">
+            </div>
+            <div class="gallery-item">
+                <img src="marag.jpg" alt="Marag">
+            </div>
+            <div class="gallery-item">
+                <img src="shaami.jpg" alt="Shaami Kebab">
+            </div>
+            <div class="gallery-item">
+                <img src="hyderabadi-biryani.jpg" alt="Hyderabadi Biryani">
+            </div>
+            <div class="gallery-item">
+                <img src="your-additional-image1.jpg" alt="Additional Creation 1">
+            </div>
+            <div class="gallery-item">
+                <img src="your-additional-image2.jpg" alt="Additional Creation 2">
+            </div>
+            <!-- Add more images as needed -->
+        </div>
+
+        <section id="tips">
+            <h2>Cooking Tips & Tricks</h2>
+            <p>Master the art of cooking with these simple tips:</p>
+            <ul>
+                <li>Always taste as you cook to adjust flavors.</li>
+                <li>Use fresh ingredients for the best flavor.</li>
+                <li>Prepping your ingredients before starting will save time.</li>
+                <li>Don’t be afraid to experiment with spices!</li>
+            </ul>
+        </section>
+        
+        <section id="community">
+            <h2>Join Our Community</h2>
+            <p>Share your culinary creations with us on Instagram! Tag us with #CookingBySyeda to be featured.</p>
+        </section>
+    </div>
+    <footer class="footer">
+        <p>Follow us on Instagram: @_cooking.by.syeda_ <a href="https://www.instagram.com/_cooking.by.syeda_" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo"></a>
+        </p>
+        <p>&copy; 2023 Cooking by Syeda. All rights reserved.</p>
+    </footer>
+</body>
+</html>
